@@ -13,24 +13,51 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\StageRelation">
+      <UniqueIdentifier>{26445b07-ead3-41e4-83a7-dce0ba2f7cba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\StageRelation\Character">
+      <UniqueIdentifier>{900593cc-d186-42e0-8467-078d460bb59b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="소스.cpp">
+    <ClCompile Include="cMain.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="StudentManager.cpp">
+    <ClCompile Include="Character.cpp">
+      <Filter>소스 파일\StageRelation\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="MapManager.cpp">
+      <Filter>소스 파일\StageRelation</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Student.cpp">
+    <ClCompile Include="Singletone.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="StudentManager.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="StageRelation.h">
+      <Filter>소스 파일\StageRelation</Filter>
     </ClInclude>
-    <ClInclude Include="Student.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="StageEnums.h">
+      <Filter>소스 파일\StageRelation</Filter>
+    </ClInclude>
+    <ClInclude Include="Enums.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>소스 파일\StageRelation\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="MapManager.h">
+      <Filter>소스 파일\StageRelation</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Singletone.h">
+      <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

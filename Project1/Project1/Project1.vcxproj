@@ -18,6 +18,22 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="cMain.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="MapManager.cpp" />
+    <ClCompile Include="Singletone.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="Enums.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="MapManager.h" />
+    <ClInclude Include="Singletone.h" />
+    <ClInclude Include="StageEnums.h" />
+    <ClInclude Include="StageRelation.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,15 +142,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Student.cpp" />
-    <ClCompile Include="StudentManager.cpp" />
-    <ClCompile Include="소스.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Student.h" />
-    <ClInclude Include="StudentManager.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
