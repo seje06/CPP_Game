@@ -1,12 +1,21 @@
 #pragma once
 
-enum DIR
+enum class DIR
 {
 	LEFT,
 	RIGHT
 };
 
-enum ENEMY_TYPE
+enum class ENEMY_TYPE
+{
+	EASY,
+	GENERAL,
+	HARD,
+	FREAKISH,
+	HARD_FREAKISH
+};
+
+enum class ENEMY_TYPE
 {
 	EASY,
 	GENERAL,

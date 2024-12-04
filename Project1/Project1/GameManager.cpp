@@ -55,3 +55,33 @@ void GameManager::ClearBuffer()
 
 	FillConsoleOutputCharacter(hBuffer[screenIndex], ' ', BufferWidth * BufferHeight, pos, &dw);
 }
+
+void GameManager::ManageScene()
+{
+	if (GetAsyncKeyState(VK_RETURN))
+	{
+		int nextId = ((int)id) + 1;
+		if (SCENE_MAXIMUM <= nextId)
+		{
+			nextId -= 1;
+		}
+		else
+		{
+			id = (SCENE_ID)nextId;
+			initFuncs[(int)id]();
+		}
+	}
+
+	switch (id)
+	{
+	case SCENE_ID::LOGO:
+		//ProgressLogo();
+		break;
+	case SCENE_ID::STAGE:
+		/*ProgressStage();
+		RenderStage();*/
+		break;
+	default:
+		break;
+	}
+}

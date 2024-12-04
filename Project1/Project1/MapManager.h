@@ -1,5 +1,7 @@
 #pragma once
-#include"Singletone.h"
+
+#include"Utill.h"
+
 #define MAP_HEIGHT 30
 #define MAP_WIDTH 30
 
@@ -42,6 +44,7 @@ public:
 
 	};
 };
+
 MapManager* MapManager::instance = nullptr;
 
 

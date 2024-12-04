@@ -1,25 +1,26 @@
 #pragma once
 #include<Windows.h>
-#include"Singletone.h"
+#include"Utill.h"
 #include "Enums.h"
 
 #define BufferWidth 80	
 #define BufferHeight 40	
+#define SCENE_MAXIMUM 2
+
+
 
 class GameManager:public Singletone<GameManager>
 {
 
 public:
 	HANDLE hBuffer[2];
-	float deltaTime;
-	int frameSpeed;
 	int screenIndex;
+	float deltaTime = 0;
 	SCENE_ID id;
+	Action<void> initFuncs[2];
 
-	void Init(int frameSpeed,SCENE_ID id)
+	void Init(SCENE_ID id)
 	{
-		deltaTime = 0;
-		this->frameSpeed = frameSpeed;
 		this->id = id;
 		screenIndex = 0;
 	}
@@ -29,5 +30,7 @@ public:
     void ReleaseBuffer();
 	void FlipBuffer();
 	void ClearBuffer();
+	
+	void ManageScene();
 };
 GameManager* GameManager::instance = nullptr;

@@ -1,7 +1,5 @@
 #pragma once
-#include"StageRelation.h"
-#include"MapManager.h"
-#include"GameManager.h"
+#include"Obj.h"
 
 class Character: public Obj
 {
@@ -11,8 +9,18 @@ public:
 	bool isDie;
 	bool isHitting;
 
-	void ProcessGravity(Obj& obj, int objHeight, int weight);
-	
-	
+protected:
+	void Init(float hitTime,int hp, bool isDie, bool isHitting)
+	{
+		this->hitTime = hitTime;
+		this->hp = hp;
+		this->isDie = isDie;
+		this->isHitting = isHitting;
+	}
+public:
+	virtual ~Character() override
+	{
+		
+	}
 };
 
