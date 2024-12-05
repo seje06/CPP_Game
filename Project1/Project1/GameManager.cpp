@@ -68,20 +68,22 @@ void GameManager::ManageScene()
 		else
 		{
 			id = (SCENE_ID)nextId;
-			initFuncs[(int)id]();
+			sceneManagers[(int)id]->Init();
 		}
 	}
 
-	switch (id)
-	{
-	case SCENE_ID::LOGO:
-		//ProgressLogo();
-		break;
-	case SCENE_ID::STAGE:
-		/*ProgressStage();
-		RenderStage();*/
-		break;
-	default:
-		break;
-	}
+	sceneManagers[(int)id]->Progress();
+	sceneManagers[(int)id]->Render();
+	//switch (id)
+	//{
+	//case SCENE_ID::LOGO:
+	//	//ProgressLogo();
+	//	break;
+	//case SCENE_ID::STAGE:
+	//	sceneManagers[(int)id]->Progress();
+	//	RenderStage();
+	//	break;
+	//default:
+	//	break;
+	//}
 }

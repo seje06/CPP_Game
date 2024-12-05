@@ -1,24 +1,22 @@
 #pragma once
-#include"Utill.h"
+#include"GameManager.h"
+#include"MapManager.h"
 #include"Player.h"
-#include"Enemy.h"
+#include"EnemiesManager.h"
 
-#define ENEMY_COUNT 10
 
-class StageManager:public Singletone<StageManager>
+class StageManager:public SceneManager
 {
-public:
+private:
 	Player* player;
-	Enemy* enemies[ENEMY_COUNT];
-
 	int currentStage;
-	bool isPartialClear;
-	bool isClear;
+	
 
-	void InitStage();
-	void ProgressStage();
-	void RenderStage();
-	void ReleaseStage();
+public:
+	StageManager();
+	virtual void Init() override;
+	virtual void Progress() override;
+	virtual void Render() override;
 	void StageLevelUp();
 };
 

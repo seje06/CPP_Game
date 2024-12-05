@@ -2,6 +2,7 @@
 #include<Windows.h>
 #include"Utill.h"
 #include "Enums.h"
+#include"SceneManager.h"
 
 #define BufferWidth 80	
 #define BufferHeight 40	
@@ -18,11 +19,26 @@ public:
 	float deltaTime = 0;
 	SCENE_ID id;
 	Action<void> initFuncs[2];
+	SceneManager* sceneManagers[SCENE_MAXIMUM];
+	
+	GameManager()
+	{
+		for (int i = 0; i < SCENE_MAXIMUM; i++)
+			sceneManagers[i] = nullptr;
+	}
 
 	void Init(SCENE_ID id)
 	{
 		this->id = id;
 		screenIndex = 0;
+
+		if (sceneManagers[(int)id] != nullptr) sceneManagers[(int)id]->Init();
+
+	}
+
+	void AddScene(SceneManager* manager, SCENE_ID id)
+	{
+		if (sceneManagers[(int)id] == nullptr) sceneManagers[(int)id] = manager;
 	}
 
 	void InitBuffer();

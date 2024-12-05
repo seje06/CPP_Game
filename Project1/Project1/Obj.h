@@ -6,7 +6,7 @@
 class Obj
 {
 public:
-	string** shape[2];
+	const char*** shape[2];
 	JumpeInfo jumpInfo;
 	Pos pos;
 	float speed;
@@ -15,7 +15,7 @@ public:
 	int aniIndex;
 	COLOR color;
 	
-	Obj(string** shape[2], Pos pos, COLOR color,float speed)
+	Obj(const char*** shape[2], Pos pos, COLOR color,float speed)
 	{
 		this->shape[0] = shape[0];
 		this->shape[1] = shape[1];

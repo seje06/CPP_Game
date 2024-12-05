@@ -8,9 +8,14 @@ class Enemy : public Character
 {
 public:
 
-	void Init(float hitTime, int hp, bool isDie, bool isHitting)
+	ENEMY_TYPE type;
+	bool isActive;
+
+	void Init(float hitTime, int hp, bool isDie, bool isHitting, ENEMY_TYPE type)
 	{
 		Character::Init(hitTime, hp, isDie, isHitting);
+		this->type = type;
+		isActive = false;
 	}
 
 	virtual ~Enemy() override
