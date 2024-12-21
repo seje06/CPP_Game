@@ -6,14 +6,6 @@ enum class DIR
 	RIGHT
 };
 
-enum class ENEMY_TYPE
-{
-	EASY,
-	GENERAL,
-	HARD,
-	FREAKISH,
-	HARD_FREAKISH
-};
 
 enum class ENEMY_TYPE
 {

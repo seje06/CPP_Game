@@ -1,11 +1,13 @@
 #pragma once
 #include"GameManager.h"
+#include"BufferManager.h"
 #include"MapManager.h"
 #include"Player.h"
 #include"EnemiesManager.h"
 
 
-class StageManager:public SceneManager
+
+class StageManager:public Singletone<StageManager>,public SceneManager
 {
 private:
 	Player* player;
@@ -18,5 +20,9 @@ public:
 	virtual void Progress() override;
 	virtual void Render() override;
 	void StageLevelUp();
+
+	void SensePlayerHit();
+	void SenseEnemyHit();
+
 };
 

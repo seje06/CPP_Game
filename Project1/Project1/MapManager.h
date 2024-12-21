@@ -44,7 +44,6 @@ public:
 
 	};
 };
-
-MapManager* MapManager::instance = nullptr;
+//MapManager* MapManager::instance = nullptr;
 
 

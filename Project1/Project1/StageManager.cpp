@@ -2,18 +2,33 @@
 
 StageManager::StageManager()
 {
+	currentStage = 1;
+	player = nullptr;
 	GameManager::GetInstance()->AddScene(this,SCENE_ID::STAGE);
 }
 
 void StageManager::Init()
 {
 	currentStage = 1;
+
+	player = new Player();
+	player->Init(0, PLAYER_MAX_HP, false, false);
+	EnemiesManager::GetInstance()->Init();
+
 }
 
 void StageManager::Progress()
 {
 	if (player->isDie)return;
 	if (EnemiesManager::GetInstance()->isAllClear) return;
+
+	StageLevelUp();
+	EnemiesManager::GetInstance()->Spawn();
+	player->Controll();
+	player->gun->ControllBullet();
+	EnemiesManager::GetInstance()->Controll(*player);
+	SensePlayerHit();
+	SenseEnemyHit();
 }
 
 void StageManager::Render()
@@ -26,7 +41,7 @@ void StageManager::Render()
 			switch (MapManager::GetInstance()->map[y][x])
 			{
 			case 1:
-				GameManager::GetInstance()->WriteBuffer(x, y, "■", CYAN);
+				BufferManager::GetInstance()->WriteBuffer(x, y, "■", CYAN);
 				break;
 			default:
 				break;
@@ -41,12 +56,12 @@ void StageManager::Render()
 	//플레이어
 	for (int i = 0; i < PLAYER_HEIGHT; i++)
 	{
-		GameManager::GetInstance()->WriteBuffer((int)player->pos.x, player->pos.y + i, player->shape[player->dir][player->aniIndex][i], player->color);
+		BufferManager::GetInstance()->WriteBuffer((int)player->pos.x, player->pos.y + i, player->shape[player->dir][player->aniIndex][i], player->color);
 	}
 	//플레이어 상태
 	for (int i = 0; i < player->hp; i++)
 	{
-		GameManager::GetInstance()->WriteBuffer(i + 1, 10, "♥", WHITE);
+		BufferManager::GetInstance()->WriteBuffer(i + 1, 10, "♥", WHITE);
 	}
 	//const char* t = player->hitTime >= 1? "1":"0";
 	//WriteBuffer(10, 10, t, WHITE);
@@ -59,25 +74,25 @@ void StageManager::Render()
 		{
 			for (int j = 0; j < PLAYER_HEIGHT; j++)
 			{
-				GameManager::GetInstance()->WriteBuffer((int)enemy->pos.x, enemy->pos.y + j, enemy->shape[enemy->dir][enemy->aniIndex][j], enemy->color);
+				BufferManager::GetInstance()->WriteBuffer((int)enemy->pos.x, enemy->pos.y + j, enemy->shape[enemy->dir][enemy->aniIndex][j], enemy->color);
 
 			}
 		}
 	}
 
 	//총알
-	/*int j = 0;
+	int j = 0;
 	for (int i = 0; i < BULLET_COUNT; i++)
 	{
-		if (bulletManager->bullets[i]->isActive)
+		if (player->gun->bullets[i]->isActive)
 		{
-			WriteBuffer((int)bulletManager->bullets[i]->pos.x, bulletManager->bullets[i]->pos.y, "@", LIGHTMAGENTA);
+			BufferManager::GetInstance()->WriteBuffer((int)player->gun->bullets[i]->pos.x, player->gun->bullets[i]->pos.y, "@", LIGHTMAGENTA);
 		}
 		else
 		{
-			WriteBuffer(++j + 20, 10, "@", WHITE);
+			BufferManager::GetInstance()->WriteBuffer(++j + 20, 10, "@", WHITE);
 		}
-	}*/
+	}
 }
 
 
@@ -152,3 +167,72 @@ void StageManager::StageLevelUp()
 		EnemiesManager::GetInstance()->isPartialClear = false;
 	}
 }
+
+void StageManager::SensePlayerHit()
+{
+	if (player->isHitting)
+	{
+		player->hitTime += DeltaTime;
+		if (player->hitTime >= 1) player->isHitting = false;
+	}
+	if (!player->isHitting)
+	{
+		for (int i = 0; i < ENEMY_COUNT; i++)
+		{
+			Enemy* enemy = EnemiesManager::GetInstance()->enemies[i];
+			if (EnemiesManager::GetInstance()->enemies[i]->isActive)
+			{
+				if (enemy->pos.y <= player->pos.y + PLAYER_HEIGHT - 1 && enemy->pos.y + PLAYER_HEIGHT - 1 >= player->pos.y &&
+					(int)enemy->pos.x == (int)player->pos.x)
+				{
+					player->isHitting = true;
+					player->hp -= 1;
+					player->hitTime = 0;
+					if (player->hp <= 0) player->isDie = true;
+					break;
+				}
+			}
+		}
+	}
+}
+
+void StageManager::SenseEnemyHit()
+{
+	for (int i = 0; i < ENEMY_COUNT; i++)
+	{
+		Enemy* enemy = EnemiesManager::GetInstance()->enemies[i];
+		if (enemy->isActive)
+		{
+			if (enemy->isHitting)
+			{
+				enemy->hitTime += DeltaTime;
+				if (enemy->hitTime >= 0)
+				{
+					enemy->hitTime = 0;
+					enemy->isHitting = false;
+				}
+			}
+			if (!enemy->isHitting)
+			{
+				for (int j = 0; j < BULLET_COUNT; j++)
+				{
+					if (enemy->pos.y <= player->gun->bullets[j]->pos.y && enemy->pos.y + PLAYER_HEIGHT - 1 >= player->gun->bullets[j]->pos.y &&
+						(int)enemy->pos.x == (int)player->gun->bullets[j]->pos.x && player->gun->bullets[j]->isActive)
+					{
+						player->gun->bullets[j]->isActive = false;
+						enemy->isHitting = true;
+						enemy->hp -= 1;
+						enemy->hitTime = 0;
+						if (enemy->hp <= 0)
+						{
+							enemy->isDie = true;
+							enemy->isActive= false;
+							EnemiesManager::GetInstance()->deathCount++;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

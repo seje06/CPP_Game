@@ -3,7 +3,7 @@
 
 void EnemiesManager::Spawn()
 {
-	spawnTime += GameManager::GetInstance()-> deltaTime;
+	spawnTime += DeltaTime;
 	if (spawnTime >= 2)
 	{
 		spawnTime = 0;
@@ -50,64 +50,76 @@ void EnemiesManager::Spawn()
 	}
 }
 
-void EnemiesManager::Controll(Player* player)
+void EnemiesManager::Controll(const Player& player)
 {
 	for (int i = 0; i < ENEMY_COUNT; i++)
 	{
 		if (enemies[i]->isActive)
 		{
 			// x贸府
-			float xDif = (player->obj.pos.x - enemies[i]->obj.pos.x);
+			float xDif = (player.pos.x - enemies[i]->pos.x);
 
 			if (xDif > 0)
 			{
-				enemies[i]->obj.dir = RIGHT;
-				enemies[i]->obj.pos.x += deltaTime * enemies[i]->obj.speed;
-				if (enemies[i]->obj.pos.x == (int)enemies[i]->obj.pos.x)
-					enemies[i]->obj.aniIndex = enemies[i]->obj.aniIndex + 1 >= PLAYER_ANI_LENGTH ? 0 : enemies[i]->obj.aniIndex + 1;
+				enemies[i]->dir = (int)DIR::RIGHT;
+				enemies[i]->pos.x +=DeltaTime * enemies[i]->speed;
+				if (enemies[i]->pos.x == (int)enemies[i]->pos.x)
+					enemies[i]->aniIndex = enemies[i]->aniIndex + 1 >= ENEMY_ANI_LENGTH ? 0 : enemies[i]->aniIndex + 1;
 
 			}
 			else if (xDif < 0)
 			{
-				enemies[i]->obj.dir = LEFT;
-				enemies[i]->obj.pos.x -= deltaTime * enemies[i]->obj.speed;
-				if (enemies[i]->obj.pos.x == (int)enemies[i]->obj.pos.x)
-					enemies[i]->obj.aniIndex = enemies[i]->obj.aniIndex + 1 >= PLAYER_ANI_LENGTH ? 0 : enemies[i]->obj.aniIndex + 1;
+				enemies[i]->dir = (int)DIR::LEFT;
+				enemies[i]->pos.x -= DeltaTime * enemies[i]->speed;
+				if (enemies[i]->pos.x == (int)enemies[i]->pos.x)
+					enemies[i]->aniIndex = enemies[i]->aniIndex + 1 >= ENEMY_ANI_LENGTH ? 0 : enemies[i]->aniIndex + 1;
 			}
 
-			if ((!enemies[i]->obj.jumper.isJumpUp && !enemies[i]->obj.jumper.isJumpDown))
+			if ((!enemies[i]->jumpInfo.isJumpUp && !enemies[i]->jumpInfo.isJumpDown))
 			{
 				int random = 0;
 				//jump贸府
-				switch (enemyManager->enemiesType[i])
+				switch (enemies[i]->type)
 				{
-				case EASY:
+				case ENEMY_TYPE::EASY:
 					break;
-				case GENERAL:
+				case ENEMY_TYPE::GENERAL:
 					break;
-				case HARD:
+				case ENEMY_TYPE::HARD:
 					break;
-				case FREAKISH:
+				case ENEMY_TYPE::FREAKISH:
 					random = rand() % 2;
 					if (random == 1)
 					{
-						enemies[i]->obj.jumper.isJumpUp = true;
-						enemies[i]->obj.jumper.isJumpDown = false;
-						enemies[i]->obj.jumper.startJumpY = enemies[i]->obj.pos.y;
+						enemies[i]->jumpInfo.isJumpUp = true;
+						enemies[i]->jumpInfo.isJumpDown = false;
+						enemies[i]->jumpInfo.startJumpY = enemies[i]->pos.y;
 					}
 					break;
-				case HARD_FREAKISH:
+				case ENEMY_TYPE::HARD_FREAKISH:
 					random = rand() % 2;
 					if (random == 1)
 					{
-						enemies[i]->obj.jumper.isJumpUp = true;
-						enemies[i]->obj.jumper.isJumpDown = false;
-						enemies[i]->obj.jumper.startJumpY = enemies[i]->obj.pos.y;
+						enemies[i]->jumpInfo.isJumpUp = true;
+						enemies[i]->jumpInfo.isJumpDown = false;
+						enemies[i]->jumpInfo.startJumpY = enemies[i]->pos.y;
 					}
 					break;
 				}
 			}
-			ProcessGravity(enemies[i]->obj, PLAYER_HEIGHT, 3);
+			enemies[i]->ProcessGravity(ENEMY_HEIGHT, 3);
 		}
+	}
+}
+
+void EnemiesManager::Init()
+{
+	for (int i = 0; i < ENEMY_COUNT;i++)
+	{
+		enemies[i] = new Enemy();
+
+		enemies[i]->isActive = false;
+		
+		enemies[i]->Init(0, 3, false, false, ENEMY_TYPE::EASY);
 	}
 }

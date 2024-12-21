@@ -1,10 +1,10 @@
 #pragma once
 #include"Utill.h"
-class SceneManager:public Singletone<SceneManager>
+
+class SceneManager
 {
 public:
-	virtual void Init() {};
-	virtual void Progress() {};
-	virtual void Render() {};
+	virtual void Init() {}
+	virtual void Progress() {}
+	virtual void Render() {}
 };
-

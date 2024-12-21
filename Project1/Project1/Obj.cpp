@@ -14,11 +14,10 @@ void Obj::ProcessGravity( int objHeight, int weight)
 		jumpInfo.startJumpY = preY;
 	}
 
-	float deltaTime = GameManager::GetInstance()->deltaTime;
 	//점핑 상태일때 처리
 	if (jumpInfo.isJumpUp || jumpInfo.isJumpDown)
 	{
-		jumpInfo.time += deltaTime * weight;
+		jumpInfo.time += DeltaTime * weight;
 		float freeFallDis = -0.5 * G * jumpInfo.time * jumpInfo.time;
 		float jumpDis = Vo * jumpInfo.time;
 

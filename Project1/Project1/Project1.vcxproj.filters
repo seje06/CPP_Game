@@ -28,6 +28,9 @@
     <Filter Include="소스 파일\SceneRelation\StageRelation\Character\Player">
       <UniqueIdentifier>{c8cae453-6a5e-43cf-b5fe-2bbe32bfa426}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\SceneRelation\LogoRelation">
+      <UniqueIdentifier>{5dc131eb-dd3e-4d14-8c2a-1efe33f8678b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cMain.cpp">
@@ -60,11 +63,17 @@
     <ClCompile Include="Player.cpp">
       <Filter>소스 파일\SceneRelation\StageRelation\Character\Player</Filter>
     </ClCompile>
+    <ClCompile Include="BufferManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Gun.cpp">
+      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
+    </ClCompile>
+    <ClCompile Include="LogoScene.cpp">
+      <Filter>소스 파일\SceneRelation\LogoRelation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="StageRelation.h">
-      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
-    </ClInclude>
     <ClInclude Include="StageEnums.h">
       <Filter>소스 파일\SceneRelation\StageRelation</Filter>
     </ClInclude>
@@ -100,6 +109,21 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>소스 파일\SceneRelation\StageRelation\Character\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="StageRelation.h">
+      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferManager.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Gun.h">
+      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
+    </ClInclude>
+    <ClInclude Include="LogoScene.h">
+      <Filter>소스 파일\SceneRelation\LogoRelation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -19,11 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BufferManager.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="cMain.cpp" />
     <ClCompile Include="EnemiesManager.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Gun.cpp" />
+    <ClCompile Include="LogoScene.cpp" />
     <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -31,11 +34,14 @@
     <ClCompile Include="StageManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BufferManager.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="EnemiesManager.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Enums.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Gun.h" />
+    <ClInclude Include="LogoScene.h" />
     <ClInclude Include="MapManager.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="Player.h" />
@@ -43,6 +49,7 @@
     <ClInclude Include="StageEnums.h" />
     <ClInclude Include="StageManager.h" />
     <ClInclude Include="StageRelation.h" />
+    <ClInclude Include="Time.h" />
     <ClInclude Include="Utill.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

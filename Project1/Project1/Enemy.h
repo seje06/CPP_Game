@@ -13,6 +13,34 @@ public:
 
 	void Init(float hitTime, int hp, bool isDie, bool isHitting, ENEMY_TYPE type)
 	{
+		const char*** shape[2];
+		shape[0] = new const char** [ENEMY_ANI_LENGTH];
+		shape[1] = new const char** [ENEMY_ANI_LENGTH];
+		for (int i = 0; i < ENEMY_HEIGHT; i++)
+		{
+			shape[0][i] = new const char* [ENEMY_HEIGHT];
+			shape[1][i] = new const char* [ENEMY_HEIGHT];
+		}
+		shape[0][0][0] = "¢¸";
+		shape[0][0][1] = "¦À";
+		shape[0][0][2] = "¥Ë";
+
+		shape[0][1][0] = "¢¸";
+		shape[0][1][1] = "¦À";
+		shape[0][1][2] = "¦­";
+
+		shape[1][0][0] = "¢º";
+		shape[1][0][1] = "¦À";
+		shape[1][0][2] = "¥Ë";
+
+		shape[1][1][0] = "¢º";
+		shape[1][1][1] = "¦À";
+		shape[1][1][2] = "¦­";
+
+		Pos pos;
+		pos.x = 10; pos.y = 25;
+		Obj::Init(shape, pos, COLOR::GREEN, 10);
+
 		Character::Init(hitTime, hp, isDie, isHitting);
 		this->type = type;
 		isActive = false;

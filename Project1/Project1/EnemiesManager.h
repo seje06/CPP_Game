@@ -1,7 +1,7 @@
 #pragma once
 #include"Enemy.h"
 #include"Utill.h"
-#include"GameManager.h"
+#include"Time.h"
 #include"Player.h"
 #define ENEMY_COUNT 10
 
@@ -15,6 +15,7 @@ public:
 	bool isAllClear;
 
 	void Spawn();
-	void Controll();
+	void Controll(const Player& player);
+	void Init();
 };
-
+//EnemiesManager* EnemiesManager::instance = nullptr;
