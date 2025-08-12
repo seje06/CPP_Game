@@ -1,4 +1,7 @@
 #include "Player.h"
+#include "MapManager.h"
+#include "StageEnums.h"
+#include "Time.h"
 
 void Player::Controll()
 {

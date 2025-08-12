@@ -2,8 +2,8 @@
 #include<Windows.h>
 #include"Utill.h"
 
-#define BufferWidth 80	
-#define BufferHeight 40	
+#define BufferWidth 160	
+#define BufferHeight 160	
 
 class BufferManager:public Singletone<BufferManager>
 {

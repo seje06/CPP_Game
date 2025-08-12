@@ -1,7 +1,7 @@
 #pragma once
 #include"Enemy.h"
 #include"Utill.h"
-#include"Time.h"
+//#include"Time.h"
 #include"Player.h"
 #define ENEMY_COUNT 10
 

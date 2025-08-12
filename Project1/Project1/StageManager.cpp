@@ -1,10 +1,15 @@
 #include "StageManager.h"
+#include"GameManager.h"
+#include"BufferManager.h"
+#include"EnemiesManager.h"
+#include"MapManager.h"
+#include "Time.h"
 
 StageManager::StageManager()
 {
 	currentStage = 1;
 	player = nullptr;
-	GameManager::GetInstance()->AddScene(this,SCENE_ID::STAGE);
+	GameManager::GetInstance()->AddSceneManager(this,SCENE_ID::STAGE);
 }
 
 void StageManager::Init()

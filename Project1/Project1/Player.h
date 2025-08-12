@@ -1,8 +1,8 @@
 #pragma once
 #include"Character.h"
 #include "Gun.h"
-#include "MapManager.h"
-#include "StageEnums.h"
+//#include "MapManager.h"
+//#include "StageEnums.h"
 #define PLAYER_ANI_LENGTH 2
 #define PLAYER_HEIGHT 3
 #define PLAYER_MAX_HP 10
@@ -35,7 +35,7 @@ public:
 		shape[1][1][1] = "ж┘";
 		shape[1][1][2] = "жн";
 
-		Pos pos;
+		//Pos pos;
 		pos.x = 10; pos.y = 25;
 		Obj::Init(shape, pos, COLOR::GREEN, 10);
 

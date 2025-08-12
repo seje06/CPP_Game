@@ -1,10 +1,10 @@
 #pragma once
-#include"GameManager.h"
-#include"BufferManager.h"
-#include"MapManager.h"
+//#include"GameManager.h"
+//#include"BufferManager.h"
+//#include"MapManager.h"
 #include"Player.h"
-#include"EnemiesManager.h"
-
+//#include"EnemiesManager.h"
+#include "SceneManager.h"
 
 
 class StageManager:public Singletone<StageManager>,public SceneManager

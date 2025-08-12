@@ -24,7 +24,7 @@ public:
 
 	}
 
-	void AddScene(SceneManager* manager, SCENE_ID id)
+	void AddSceneManager(SceneManager* manager, SCENE_ID id)
 	{
 		sceneManagers[(int)id] = manager;
 	}

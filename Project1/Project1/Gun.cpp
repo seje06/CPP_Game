@@ -1,4 +1,5 @@
 #include "Gun.h"
+#include"Time.h"
 
 Gun::Gun(Pos& ownerPos, int& ownerDir, float speed, int ownerHeight,float reloadTime)
 {
@@ -35,6 +36,7 @@ void Gun::ControllBullet()
 				//int addX = player->obj.dir == 0 ? -1 : 1;
 				bullets[i]->pos.x =pos->x;
 				bullets[i]->pos.y = pos->y + ownerHeight / 2;
+				bullets[i]->dir = *dir;
 				break;
 			}
 		}
@@ -44,7 +46,7 @@ void Gun::ControllBullet()
 	{
 		if (bullets[i]->isActive)
 		{
-			if (dir == 0) bullets[i]->pos.x -= speed * DeltaTime;
+			if (bullets[i]->dir == 0) bullets[i]->pos.x -= speed * DeltaTime;
 			else bullets[i]->pos.x += speed * DeltaTime;
 
 			if (bullets[i]->pos.x > 30 || bullets[i]->pos.x < 0)  bullets[i]->isActive = false;

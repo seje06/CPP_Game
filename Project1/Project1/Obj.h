@@ -1,8 +1,8 @@
 #pragma once
 #include"StageRelation.h"
 #include"StageEnums.h"
-#include"MapManager.h"
-#include"Time.h"
+//#include"MapManager.h"
+//#include"Time.h"
 class Obj
 {
 public:

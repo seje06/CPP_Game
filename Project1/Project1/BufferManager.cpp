@@ -54,4 +54,5 @@ void BufferManager::ClearBuffer()
 	DWORD dw;
 
 	FillConsoleOutputCharacter(hBuffer[screenIndex], ' ', BufferWidth * BufferHeight, pos, &dw);
+	FillConsoleOutputAttribute(hBuffer[screenIndex], 7, BufferWidth * BufferHeight, pos, &dw);
 }

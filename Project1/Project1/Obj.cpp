@@ -1,4 +1,6 @@
 #include "Obj.h"
+#include"Time.h"
+#include"MapManager.h"
 
 void Obj::ProcessGravity( int objHeight, int weight)
 {

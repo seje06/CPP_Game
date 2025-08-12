@@ -1,7 +1,7 @@
 #pragma once
 #include<Windows.h>
 #include"StageRelation.h"
-#include"Time.h"
+
 
 
 #define BULLET_COUNT 10
@@ -12,6 +12,7 @@ public:
 	struct Bullet
 	{
 		Pos pos;
+		int dir;
 		bool isActive;
 	};
 	Bullet* bullets[10] = {};
