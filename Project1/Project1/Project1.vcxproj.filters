@@ -72,6 +72,9 @@
     <ClCompile Include="LogoScene.cpp">
       <Filter>소스 파일\SceneRelation\LogoRelation</Filter>
     </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StageEnums.h">

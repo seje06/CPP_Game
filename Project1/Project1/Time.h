@@ -1,6 +1,6 @@
 #pragma once
 namespace SettableTime
 {
-	static float deltaTime;
+	extern float deltaTime;
 }
-static const float& DeltaTime= SettableTime::deltaTime;
+extern const float& DeltaTime;
