@@ -13,120 +13,108 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="소스 파일\SceneRelation">
-      <UniqueIdentifier>{104ea1f5-b577-4cf2-a7c6-43e50f425550}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\SceneRelation\StageRelation">
-      <UniqueIdentifier>{26445b07-ead3-41e4-83a7-dce0ba2f7cba}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\SceneRelation\StageRelation\Character">
-      <UniqueIdentifier>{900593cc-d186-42e0-8467-078d460bb59b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\SceneRelation\StageRelation\Character\Enemy">
-      <UniqueIdentifier>{7dc8eccb-c44c-4a67-9595-7c4441de2adb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\SceneRelation\StageRelation\Character\Player">
-      <UniqueIdentifier>{c8cae453-6a5e-43cf-b5fe-2bbe32bfa426}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\SceneRelation\LogoRelation">
-      <UniqueIdentifier>{5dc131eb-dd3e-4d14-8c2a-1efe33f8678b}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cMain.cpp">
+    <ClCompile Include="SceneRelation\LogoRelation\LogoScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Character.cpp">
-      <Filter>소스 파일\SceneRelation\StageRelation\Character</Filter>
+    <ClCompile Include="SceneRelation\StageRelation\Character\Enemy\EnemiesManager.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="MapManager.cpp">
-      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
+    <ClCompile Include="SceneRelation\StageRelation\Character\Enemy\Enemy.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRelation\StageRelation\Character\Player\Player.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRelation\StageRelation\Character\Character.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRelation\StageRelation\Gun.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRelation\StageRelation\MapManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRelation\StageRelation\Obj.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRelation\StageRelation\StageManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRelation\SceneManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Time.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="cMain.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="GameManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Obj.cpp">
-      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
-    </ClCompile>
-    <ClCompile Include="StageManager.cpp">
-      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
-      <Filter>소스 파일\SceneRelation</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemiesManager.cpp">
-      <Filter>소스 파일\SceneRelation\StageRelation\Character\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>소스 파일\SceneRelation\StageRelation\Character\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>소스 파일\SceneRelation\StageRelation\Character\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="BufferManager.cpp">
+    <ClCompile Include="Core\BufferManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Gun.cpp">
-      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
-    </ClCompile>
-    <ClCompile Include="LogoScene.cpp">
-      <Filter>소스 파일\SceneRelation\LogoRelation</Filter>
-    </ClCompile>
-    <ClCompile Include="Time.cpp">
+    <ClCompile Include="Core\GameTime.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="StageEnums.h">
-      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
+    <ClInclude Include="SceneRelation\LogoRelation\LogoScene.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Enums.h">
-      <Filter>소스 파일</Filter>
+    <ClInclude Include="SceneRelation\StageRelation\Character\Enemy\EnemiesManager.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>소스 파일\SceneRelation\StageRelation\Character</Filter>
+    <ClInclude Include="SceneRelation\StageRelation\Character\Enemy\Enemy.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="MapManager.h">
-      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
+    <ClInclude Include="SceneRelation\StageRelation\Character\Player\Player.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneRelation\StageRelation\Character\Character.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneRelation\StageRelation\Gun.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneRelation\StageRelation\MapManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneRelation\StageRelation\Obj.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneRelation\StageRelation\StageEnums.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneRelation\StageRelation\StageManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneRelation\StageRelation\StageRelation.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneRelation\SceneManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Time.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="GameManager.h">
-      <Filter>소스 파일</Filter>
+      <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Obj.h">
-      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
+    <ClInclude Include="Core\BufferManager.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Utill.h">
-      <Filter>소스 파일</Filter>
+    <ClInclude Include="Core\Enums.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="StageManager.h">
-      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
+    <ClInclude Include="Core\GameTime.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>소스 파일\SceneRelation</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemiesManager.h">
-      <Filter>소스 파일\SceneRelation\StageRelation\Character\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>소스 파일\SceneRelation\StageRelation\Character\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>소스 파일\SceneRelation\StageRelation\Character\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="StageRelation.h">
-      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
-    </ClInclude>
-    <ClInclude Include="Time.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="BufferManager.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Gun.h">
-      <Filter>소스 파일\SceneRelation\StageRelation</Filter>
-    </ClInclude>
-    <ClInclude Include="LogoScene.h">
-      <Filter>소스 파일\SceneRelation\LogoRelation</Filter>
+    <ClInclude Include="Core\Utill.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

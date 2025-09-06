@@ -1,9 +1,9 @@
 #include<iostream>
-#include"GameManager.h"
-#include"Time.h"
+#include"GamePlay/GameManager.h"
+#include"GameTime.h"
 #include "BufferManager.h"
-#include "LogoScene.h"
-#include "StageManager.h"
+#include "GamePlay/SceneRelation/LogoRelation/LogoScene.h"
+#include "GamePlay/SceneRelation/StageRelation/StageManager.h"
 
 using namespace std;
 

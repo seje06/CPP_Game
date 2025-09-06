@@ -1,6 +1,6 @@
 #pragma once
 //#include"Enums.h"
-#include"SceneManager.h";
+#include"../SceneManager.h";
 
 
 class LogoScene:public Singletone<LogoScene>, public SceneManager

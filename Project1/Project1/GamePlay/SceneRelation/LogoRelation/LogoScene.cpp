@@ -1,8 +1,8 @@
 #include "LogoScene.h"
-#include "MapManager.h"
+#include "../StageRelation/MapManager.h"
 #include "BufferManager.h"
 #include "Enums.h"
-#include "GameManager.h"
+#include "../../GameManager.h"
 
 LogoScene::LogoScene()
 {

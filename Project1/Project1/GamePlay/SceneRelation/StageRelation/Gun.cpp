@@ -1,5 +1,5 @@
 #include "Gun.h"
-#include"Time.h"
+#include"GameTime.h"
 
 Gun::Gun(Pos& ownerPos, int& ownerDir, float speed, int ownerHeight,float reloadTime)
 {
